@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCadastrarUsuarioComponent } from './modal-cadastrar-usuario/modal-cadastrar-usuario.component';
+import { ModalEsqueciSenhaComponent } from './modal-esqueci-senha/modal-esqueci-senha.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -14,7 +15,11 @@ export class LandingPageComponent {
 
 
   toggleAbrirModalCadastrarUsuario() {
-    this.modalService.open(ModalCadastrarUsuarioComponent, { fullscreen: true, centered: true, backdrop: false, animation: true, keyboard: false  })
+    this.modalService.open(ModalCadastrarUsuarioComponent, { fullscreen: true, centered: true, backdrop: false, animation: true, keyboard: false })
+  }
+
+  toggleAbrirModalEsqueciSenha() {
+    this.modalService.open(ModalEsqueciSenhaComponent, { fullscreen: true, centered: true, backdrop: false, animation: true, keyboard: false })
   }
 
   // abre/fecha navbar mobile

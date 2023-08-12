@@ -1,0 +1,35 @@
+<div class="card m-0">
+    <div class="card-body">
+        <div class="d-flex w-100 justify-content-end" style="cursor: pointer;" (click)="clickFechaModalLogin()">
+            <img src="../../../../assets/svg/close-outline.svg" alt="" width="40">
+        </div>
+
+        <div class="text-center p-2">
+
+            <div class="d-block auth-logo">
+                <img src="../../../../assets/img/logo-cliente.png" alt="" width="100" class="logo">
+            </div>
+        </div>
+
+        <div class="text-center mt-1">
+            <h5>Recuperar senha</h5>
+            <p class="text-justify text-sm">
+                Para recuperar sua senha no SISTEMA SAFE, basta você informar seu e-mail e CPF que estão vinculados ao
+                seu cadastro para receber uma nova senha no seu número de celular. Caso seu usuário não esteja ativo ou
+                não seja localizado na base de dados, entre em contato através do email <a
+                    href="mailto:contato@metodosafe.com.br">contato@metodosafe.com.br</a>.
+            </p>
+        </div>
+
+        <form>
+            <div class="mb-2">
+                <label class="form-label" for="useremail-input">E-mail*</label>
+                <input type="email" class="form-control" id="useremail-input" placeholder="E-mail">
+            </div>
+
+            <div class="mt-3 d-flex flex-column gap-2">
+                <button class="btn btn-verde-plataforma-safe w-100" (click)="clickRecuperarSenha()">Recuperar senha</button>
+            </div>
+        </form>
+    </div>
+</div>

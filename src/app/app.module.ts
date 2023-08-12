@@ -37,6 +37,7 @@ import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCadastrarUsuarioComponent } from './pages/landing-page/modal-cadastrar-usuario/modal-cadastrar-usuario.component';
+import { ModalEsqueciSenhaComponent } from './pages/landing-page/modal-esqueci-senha/modal-esqueci-senha.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -64,7 +65,8 @@ registerLocaleData(localeEn, 'en-EN');
         ControlSidebarComponent,
         SidebarSearchComponent,
         LandingPageComponent,
-        ModalCadastrarUsuarioComponent
+        ModalCadastrarUsuarioComponent,
+        ModalEsqueciSenhaComponent
     ],
     imports: [
         ProfabricComponentsModule,
