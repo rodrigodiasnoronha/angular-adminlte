@@ -14,6 +14,39 @@
 
 @import 'ngx-toastr/toastr';
 
+:root {
+    --azul-plataforma-safe: #005B85;
+    --verde-plataforma-safe: #40989F;
+    --amarelo-plataforma-safe: #F8E12E;
+}
+
+.btn-azul-plataforma-safe {
+    background-color: var(--azul-plataforma-safe) !important;
+    color: white !important;
+}
+
+.btn-verde-plataforma-safe {
+    background-color: var(--verde-plataforma-safe) !important;
+    color: white !important;
+}
+
+.btn-amarelo-plataforma-safe {
+    background-color: var(--amarelo-plataforma-safe) !important;
+    color: black !important;
+}
+
+.text-azul-plataforma-safe {
+    color: var(--azul-plataforma-safe) !important
+}
+
+.text-verde-plataforma-safe {
+    color: var(--verde-plataforma-safe) !important
+}
+
+.text-amarelo-plataforma-safe {
+    color: var(--amarelo-plataforma-safe) !important
+}
+
 body {
     width: 100vw;
     height: 100vh;
