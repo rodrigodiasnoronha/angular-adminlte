@@ -35,6 +35,8 @@ import {uiReducer} from './store/ui/reducer';
 import {ProfabricComponentsModule} from '@profabric/angular-components';
 import {SidebarSearchComponent} from './components/sidebar-search/sidebar-search.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCadastrarUsuarioComponent } from './pages/landing-page/modal-cadastrar-usuario/modal-cadastrar-usuario.component';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -61,7 +63,8 @@ registerLocaleData(localeEn, 'en-EN');
         MenuItemComponent,
         ControlSidebarComponent,
         SidebarSearchComponent,
-        LandingPageComponent
+        LandingPageComponent,
+        ModalCadastrarUsuarioComponent
     ],
     imports: [
         ProfabricComponentsModule,
@@ -76,7 +79,9 @@ registerLocaleData(localeEn, 'en-EN');
             timeOut: 3000,
             positionClass: 'toast-top-right',
             preventDuplicates: true
-        })
+        }),
+        NgbModule,
+        NgbModalModule
     ],
     providers: [],
     bootstrap: [AppComponent]

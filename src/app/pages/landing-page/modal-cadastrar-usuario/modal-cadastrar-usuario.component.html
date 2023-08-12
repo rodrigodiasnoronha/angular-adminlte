@@ -1,0 +1,95 @@
+<div class="card m-0">
+    <div class="card-body">
+        <div class="d-flex w-100 justify-content-end" (click)="clickFechaModalLogin()" style="cursor: pointer;">
+            <img src="../../../../assets/svg/close-outline.svg" alt="" width="40">
+        </div>
+
+        <div class="text-center p-2">
+
+            <div class="d-block auth-logo">
+                <img src="../../../../assets/img/logo-cliente.png" alt="" width="50" class="logo">
+            </div>
+        </div>
+
+        <div class="text-center mt-1">
+            <h5>Registre-se</h5>
+            <!-- <p>Você foi convidador por: <b>falta integrar aqui</b></p> -->
+        </div>
+
+        <form>
+
+            <div class="mb-2">
+                <label class="form-label" for="firstname-input">Nome Completo*</label>
+                <input type="text" class="form-control" id="firstname-input" placeholder="Nome completo">
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" for="useremail-input">E-mail*</label>
+                <input type="email" class="form-control" id="useremail-input" placeholder="E-mail">
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" for="">Ocupação atual</label>
+                <input type="text" class="form-control" id="" placeholder="Ocupação">
+            </div>
+
+
+            <div class="mb-2 row">
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="userpassword-input">País*</label>
+
+                    <select type="text" class="form-control" placeholder="Enter password">
+                        <option value="">Brazil</option>
+                        <option value="">Estados Unidos</option>
+                    </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="cadastro_telefone">Telefone/Celular</label>
+                    <input type="password" class="form-control" id="cadastro_telefone" placeholder="(__) _____-____">
+
+                </div>
+            </div>
+
+
+            <div class="mb-2 row">
+                <div class="col-12 col-md-6">
+                    <label class="form-label">Gênero*</label>
+
+                    <select type="text" class="form-control" placeholder="Enter password">
+                        <option value="" disabled selected="selected">Selecione</option>
+                        <option value="">Masculino</option>
+                        <option value="">Feminino</option>
+                    </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="userpassword-input">Data de Nascimento</label>
+                    <input type="text" class="form-control" id="userpassword-input" placeholder="__/__/____">
+
+                </div>
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label">Senha*</label>
+
+                <input type="text" class="form-control" id="userpassword-input" placeholder="Senha">
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Confirmar senha</label>
+
+                <input type="text" class="form-control" id="userpassword-input" placeholder="Confirmar senha">
+            </div>
+
+            <div class="mt-3 d-flex flex-column gap-2">
+                <button class="btn btn-verde-plataforma-safe w-100"
+                    (click)="submitCadastrarUsuario()">Cadastrar</button>
+
+                <button class="btn w-100 mt-2 text-azul-plataforma-safe" (click)="clickAbrirModalLogin()">Já possui
+                    conta? Faça login</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCadastrarUsuarioComponent } from './modal-cadastrar-usuario/modal-cadastrar-usuario.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,6 +10,14 @@ import { Component } from '@angular/core';
 export class LandingPageComponent {
   abrirNavbar: boolean = false
 
+  constructor(private modalService: NgbModal) { }
+
+
+  toggleAbrirModalCadastrarUsuario() {
+    this.modalService.open(ModalCadastrarUsuarioComponent, { fullscreen: true, centered: true, backdrop: false, animation: true, keyboard: false  })
+  }
+
+  // abre/fecha navbar mobile
   toggleNavbar() {
     // // var scroll = $(window).scrollTop();
     this.abrirNavbar = !this.abrirNavbar

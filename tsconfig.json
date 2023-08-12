@@ -25,6 +25,9 @@
             "@services/*": ["app/services/*"],
             "@/*": ["app/*"]
         },
+        "types": [
+          "@angular/localize"
+        ],
         "useDefineForClassFields": false
     },
     "angularCompilerOptions": {
