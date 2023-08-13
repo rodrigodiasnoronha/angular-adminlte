@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,14 +10,25 @@ import { urlEncode } from '@/utils/urlEncoded';
     providedIn: 'root'
 })
 export class AppService {
-    public user: any = null;
+    public user: any;
     private api = environment.endpoint_api
 
     constructor(
         private router: Router,
         private toastr: ToastrService,
         private http: HttpClient
-    ) { }
+    ) {}
+    
+     public getDadosUsuarioLogadoStorage() {
+        this.user = localStorage.getItem('user')
+        const userStorage = localStorage.getItem('user')
+        if (userStorage) {
+            this.user = JSON.parse(userStorage)
+            return JSON.parse(userStorage)
+        } else {
+            return {}
+        }
+    }
 
     private getHeaders(data: object = {}): HttpHeaders {
         const accessToken = localStorage.getItem('token')
@@ -83,6 +94,7 @@ export class AppService {
                 this.toastr.success(response as string)
             },
             error: error => {
+                console.log(error)
                 if (typeof error?.error?.Message == 'string') {
                     this.toastr.error(error?.error?.Message)
                 } else {
