@@ -21,14 +21,21 @@
             </p>
         </div>
 
-        <form>
+        <form [formGroup]="formRecuperarSenha" (ngSubmit)="onClickRecuperarSenha()">
             <div class="mb-2">
                 <label class="form-label" for="useremail-input">E-mail*</label>
-                <input type="email" class="form-control" id="useremail-input" placeholder="E-mail">
+                <input 
+                    type="email" 
+                    class="form-control" 
+                    id="useremail-input" 
+                    placeholder="E-mail"
+                    formControlName="email"
+                >
+
             </div>
 
             <div class="mt-3 d-flex flex-column gap-2">
-                <button class="btn btn-verde-plataforma-safe w-100" (click)="clickRecuperarSenha()">Recuperar senha</button>
+                <button class="btn btn-verde-plataforma-safe w-100" type="submit">Recuperar senha</button>
             </div>
         </form>
     </div>

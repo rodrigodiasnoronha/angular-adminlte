@@ -1,11 +1,11 @@
+import { LoginModel } from '@/models/login.model';
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppService } from '@services/app.service';
+import { ToastrService } from 'ngx-toastr';
 import { ModalCadastrarUsuarioComponent } from './modal-cadastrar-usuario/modal-cadastrar-usuario.component';
 import { ModalEsqueciSenhaComponent } from './modal-esqueci-senha/modal-esqueci-senha.component';
-import { LoginModel } from '@/models/login.model';
-import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
-import { AppService } from '@services/app.service';
 
 @Component({
   selector: 'app-landing-page',

@@ -54,7 +54,7 @@ export class AppService {
                 this.http.get(this.api + `/Usuario/ObterUsuarioLogado`, { headers }).subscribe({
                     next: (usuario: any) => {
                         // seta os dados no storage
-                        this.toastr.success('Login efetuado com sucesso')
+                        this.toastr.success('Login efetuado com sucesso.')
                         localStorage.setItem('token', access_token)
                         localStorage.setItem('user', JSON.stringify(usuario))
                         this.router.navigate(['/dashboard']);
@@ -67,11 +67,26 @@ export class AppService {
             },
             error: error => {
                 if (error?.status == 400) {
-                    this.toastr.error('Usuário ou senha inválidos')
+                    this.toastr.error('Usuário ou senha inválidos.')
                 } else if (error?.status == 500) {
-                    this.toastr.error('Serviço indisponível. Tente novamente mais tarde')
+                    this.toastr.error('Serviço indisponível. Tente novamente mais tarde.')
                 } else {
-                    this.toastr.error('Servidor indisponível')
+                    this.toastr.error('Serviço indisponível.')
+                }
+            }
+        })
+    }
+
+    recuperarSenha({ email }) {
+        this.http.post(this.api + `/Usuario/RecuperarSenha`, { Email: email }).subscribe({
+            next: response => {
+                this.toastr.success(response as string)
+            },
+            error: error => {
+                if (typeof error?.error?.Message == 'string') {
+                    this.toastr.error(error?.error?.Message)
+                } else {
+                    this.toastr.error("Serviço indisponível.")
                 }
             }
         })
