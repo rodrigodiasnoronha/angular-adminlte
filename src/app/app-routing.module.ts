@@ -17,10 +17,18 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 const routes: Routes = [
     {
         path: '',
+        component: LandingPageComponent
+    },
+    {
+        path: 'dashboard',
         component: MainComponent,
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         children: [
+            {
+                path: '',
+                component: DashboardComponent
+            },
             {
                 path: 'profile',
                 component: ProfileComponent
@@ -36,16 +44,8 @@ const routes: Routes = [
             {
                 path: 'sub-menu-2',
                 component: BlankComponent
-            },
-            {
-                path: '',
-                component: DashboardComponent
-            },
+            }
         ]
-    },
-    {
-        path: 'home',
-        component: LandingPageComponent
     },
     {
         path: 'login',

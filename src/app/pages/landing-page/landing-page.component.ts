@@ -1,18 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalCadastrarUsuarioComponent } from './modal-cadastrar-usuario/modal-cadastrar-usuario.component';
 import { ModalEsqueciSenhaComponent } from './modal-esqueci-senha/modal-esqueci-senha.component';
+import { LoginModel } from '@/models/login.model';
+import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AppService } from '@services/app.service';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent {
-  abrirNavbar: boolean = false
+export class LandingPageComponent implements OnInit {
+  public abrirNavbar: boolean = false
+  public formLogin: FormGroup;
+  public carregandoLogin: boolean = false
+    
+  ngOnInit() {
+    const login = new LoginModel()
+    this.formLogin = new FormGroup({
+      email: new FormControl(login.email, [Validators.required, Validators.email]),
+      senha: new FormControl(login.senha, [Validators.required])
+    });
+    
+  }
+  
+  constructor(
+    private modalService: NgbModal,
+    private toastr: ToastrService,
+    private appService: AppService
+  ) { }
 
-  constructor(private modalService: NgbModal) { }
-
+  async onClickLogin() {
+    if (this.formLogin.valid) {
+      this.carregandoLogin = true
+      await this.appService.loginByAuth(this.formLogin.value)
+      this.carregandoLogin = false
+    } else {
+      this.toastr.error('Preencha os campos do formulário corretamente', 'Campos inválidos');
+    }
+  }
 
   toggleAbrirModalCadastrarUsuario() {
     this.modalService.open(ModalCadastrarUsuarioComponent, { fullscreen: true, centered: true, backdrop: false, animation: true, keyboard: false })

@@ -66,15 +66,27 @@
                     <div class="col-lg-4 mt-3">
                         <div class="home-registration-form bg-white p-5">
                             <h4 class="form-title mb-4">Acesso a Plataforma</h4>
-                            <form class="registration-form">
+                            <form class="registration-form" [formGroup]="formLogin" (ngSubmit)="onClickLogin()" >
 
                                 <label class="text-muted">E-mail</label>
-                                <input type="email" id="email" class="form-control registration-input-box" required>
+                                <input
+                                    formControlName="email"
+                                    name="email"
+                                    id="email"
+                                    type="email" 
+                                    class="form-control registration-input-box" 
+                                />
 
                                 <label class="text-muted">Senha</label>
-                                <input type="password" id="senha" class="form-control registration-input-box" required>
-
-                                <button class="btn btn-verde-plataforma-safe w-100 text-uppercase mt-4">Acessar</button>
+                                <input 
+                                    formControlName="senha"
+                                    type="password" 
+                                    id="senha" 
+                                    name="senha"
+                                    class="form-control registration-input-box" 
+                                >
+                                
+                                <button class="btn btn-verde-plataforma-safe w-100 text-uppercase mt-4" type="submit" [disabled]="carregandoLogin">Acessar</button>
 
                                 <div class="mt-2">
                                     <span class="text-muted cursor-pointer" (click)="toggleAbrirModalEsqueciSenha()">
